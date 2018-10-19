@@ -1,0 +1,37 @@
+-- http://haskell.org/cabal/release/cabal-latest/doc/users-guide/authors.html
+name:           piecewise-polynomial
+-- http://haskell.org/haskellwiki/Package_versioning_policy
+version:        0.0.0.2
+synopsis:       Fitting and interpolation with piecewise polynomials
+-- description:
+homepage:       http://liyang.hu/
+license:        BSD3
+license-file:   LICENSE
+author:         Liyang HU <piecewise-polynomial@liyang.hu>
+-- copyright:   -- A copyright notice.
+category:       Math
+build-type:     Simple
+cabal-version:  >=1.2
+
+library
+    exposed-modules:
+        Numeric.Polynomial
+        Numeric.Polynomial.Log
+        Numeric.Polynomial.Piecewise
+        Numeric.Interpolation.Linear
+        Numeric.Interpolation.ConstrainedSpline
+
+    build-depends:
+        base >= 4,
+        mtl >= 2,
+        vector >= 0.7,
+        vector-th-unbox >= 0.1,
+        vector-space >= 0.8.0,
+        QuickCheck >= 2.4,
+        deepseq >= 1.0,
+        ghc-prim
+
+    ghc-options: -Wall
+
+-- vim: et ts=4 sw=4:
+
