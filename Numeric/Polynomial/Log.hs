@@ -33,7 +33,7 @@ import Numeric.Polynomial
 
 -- Polynomial of log of x.
 newtype Log poly a = Log (poly a)
-    deriving (Eq, Show, AdditiveGroup)
+    deriving (Generic, Eq, Show, AdditiveGroup)
 
 type instance Domain (Log poly) a = (Floating a, Domain poly a)
 instance (Translate poly) => Translate (Log poly) where

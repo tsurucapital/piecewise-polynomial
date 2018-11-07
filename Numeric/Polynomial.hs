@@ -1,6 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE ConstraintKinds #-}
 {-# LANGUAGE CPP #-}
+{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
@@ -38,6 +39,7 @@ import Data.Vector.Unboxed.Base (Unbox)
 import Data.Vector.Unboxed.Deriving
 import Data.AdditiveGroup
 import Data.VectorSpace
+import GHC.Generics (Generic)
 import Text.Printf
 import Test.QuickCheck
 
@@ -124,39 +126,39 @@ class Coefficients poly where
 -- | Specialised 1st-, 2nd-, 3rd-, 4th- and 5th-order polynomials
 data Poly0 a = Poly0{- {{{ -}
     { poly0_a :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly1 a = Poly1{- {{{ -}
     { poly1_a, poly1_b :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly2 a = Poly2
     { poly2_a, poly2_b, poly2_c :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly3 a = Poly3
     { poly3_a, poly3_b, poly3_c, poly3_d :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly4 a = Poly4
     { poly4_a, poly4_b, poly4_c, poly4_d, poly4_e :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly5 a = Poly5
     { poly5_a, poly5_b, poly5_c, poly5_d, poly5_e, poly5_f :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly6 a = Poly6
     { poly6_a, poly6_b, poly6_c, poly6_d, poly6_e, poly6_f, poly6_g :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly7 a = Poly7
     { poly7_a, poly7_b, poly7_c, poly7_d, poly7_e, poly7_f, poly7_g, poly7_h :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 
 data Poly8 a = Poly8
     { poly8_a, poly8_b, poly8_c, poly8_d, poly8_e, poly8_f, poly8_g, poly8_h, poly8_i :: {-- UNPACK #-} !a
-    } deriving (Eq, Show)
+    } deriving (Eq, Show, Generic)
 {- }}} -}
 
 type instance Domain Poly a = Fractional a
