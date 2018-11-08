@@ -250,7 +250,7 @@ exp5Tail x = exp5TailInline x
 exp5TailInline :: (Floating a, Ord a) => a -> a
 exp5TailInline x
     | doubleToFrac threshold0 < x && x < doubleToFrac threshold1 = exp5TailTaylor x
-    -- ^ This does not actually make sense for anything but Double (and AD s Double)
+    -- This does not actually make sense for anything but Double (and AD s Double)
     | otherwise = exp5TailAnal x
 
 threshold0 :: Double
